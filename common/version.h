@@ -1,0 +1,6 @@
+#define RC_NUM_VERSION_MAJOR   0
+#define RC_NUM_VERSION_MINOR   1
+#define RC_NUM_VERSION_RELEASE 0
+#define RC_NUM_VERSION_BUILD   0
+
+#define RC_STR_VERSION         "0.1.0"

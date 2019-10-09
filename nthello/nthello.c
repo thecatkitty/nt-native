@@ -13,7 +13,9 @@ NTSTATUS NTAPI NtTerminateProcess(HANDLE, NTSTATUS);
 
 #define DELAY_MS(ms) ((ms) * -10000)
 
-VOID NTAPI NtProcessStartup(PPEB peb) {
+VOID NTAPI NtProcessStartup(
+    IN PPEB peb)
+{
     UNICODE_STRING hello, dot;
     LARGE_INTEGER delay;
 
