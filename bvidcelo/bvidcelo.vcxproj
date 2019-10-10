@@ -88,14 +88,14 @@
     <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
-    <LibraryPath>C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\km\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\km\x86;$(SolutionDir)lib\x86;$(LibraryPath)</LibraryPath>
     <TargetExt>.sys</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
-    <LibraryPath>C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\km\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\km\x86;$(SolutionDir)lib\x86;$(LibraryPath)</LibraryPath>
     <TargetExt>.sys</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -125,7 +125,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Native</SubSystem>
-      <AdditionalDependencies>ntoskrnl.lib</AdditionalDependencies>
+      <AdditionalDependencies>ntoskrnl.lib;bootvid.lib</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <Driver>Driver</Driver>
       <EntryPointSymbol>DriverEntry</EntryPointSymbol>
@@ -170,7 +170,7 @@
       <SubSystem>Native</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>ntoskrnl.lib</AdditionalDependencies>
+      <AdditionalDependencies>ntoskrnl.lib;bootvid.lib</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <Driver>Driver</Driver>
       <EntryPointSymbol>DriverEntry</EntryPointSymbol>
@@ -205,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="bvidcelo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inbv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

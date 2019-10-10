@@ -1,4 +1,5 @@
 #include <ntddk.h>
+#include "inbv.h"
 
 
 typedef struct _BVID_DEVICE_EXTENSION {
@@ -13,6 +14,13 @@ NTSTATUS BVidCreate(
 {
     UNREFERENCED_PARAMETER(DeviceObject);
     UNREFERENCED_PARAMETER(Irp);
+
+    if (InbvIsBootDriverInstalled()) {
+        InbvAcquireDisplayOwnership();
+        InbvResetDisplay();
+        InbvSolidColorFill(30, 30, 200, 200, 8);
+    }
+
     DbgPrint("BVidCelo got created\n");
     return STATUS_SUCCESS;
 }
