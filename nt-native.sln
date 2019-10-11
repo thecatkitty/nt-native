@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nthello", "nthello\nthello.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bvidcelo", "bvidcelo\bvidcelo.vcxproj", "{F7B0F06B-8ED6-4320-8373-2E3406F4C445}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "common", "common\common.vcxitems", "{2EABFBF5-7776-4AA1-BD19-29D35EF89753}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		common\common.vcxitems*{2eabfbf5-7776-4aa1-bd19-29d35ef89753}*SharedItemsImports = 9

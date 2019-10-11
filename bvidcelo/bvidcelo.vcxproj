@@ -85,27 +85,27 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(SolutionDir)inc;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
-    <LibraryPath>C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\km\x86;$(SolutionDir)lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\km\x86;$(LibraryPath)</LibraryPath>
     <TargetExt>.sys</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(SolutionDir)inc;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
-    <LibraryPath>C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\km\x86;$(SolutionDir)lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\km\x86;$(LibraryPath)</LibraryPath>
     <TargetExt>.sys</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(SolutionDir)inc;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <TargetExt>.sys</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(SolutionDir)inc;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <TargetExt>.sys</TargetExt>

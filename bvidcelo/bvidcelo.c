@@ -1,5 +1,5 @@
 #include <ntddk.h>
-#include "inbv.h"
+#include <dietndk/inbv.h>
 
 
 typedef struct _BVID_DEVICE_EXTENSION {

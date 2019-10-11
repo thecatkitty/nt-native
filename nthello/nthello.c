@@ -1,20 +1,6 @@
-#ifdef ARCH_x86
-#define _X86_
-#endif
-#ifdef ARCH_x64
-#define _AMD64_
-#endif
-
+#include <platform.h>
 #include <ntddk.h>
-
-NTSTATUS NTAPI NtDisplayString(
-    IN PUNICODE_STRING Message);
-NTSTATUS NTAPI NtDelayExecution(
-    IN BOOLEAN Alertable,
-    IN PLARGE_INTEGER DelayInterval);
-NTSTATUS NTAPI NtTerminateProcess(
-    IN HANDLE ProcessHandle,
-    IN NTSTATUS ExitStatus);
+#include <dietndk/ntdll.h>
 
 #define DELAY_MS(ms) ((ms) * -10000)
 

@@ -1,5 +1,6 @@
-// Function prototypes extracted from NDK by Alex Ionescu
-#pragma once
+// Inbv* (ntoskrnl.exe) prototypes extracted from NDK by Alex Ionescu
+#ifndef _DNDK_INBV_H_
+#define _DNDK_INBV_H_
 
 #include <ntdef.h>
 
@@ -79,3 +80,5 @@ VOID NTAPI InbvSolidColorFill(
 VOID NTAPI InbvSetProgressBarSubset(
     IN ULONG Floor,
     IN ULONG Ceiling);
+
+#endif // _DNDK_INBV_H_
