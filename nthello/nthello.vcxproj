@@ -69,26 +69,30 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(SolutionDir)inc;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <LibraryPath>$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(SolutionDir)inc;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <LibraryPath>$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(SolutionDir)inc;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
+    <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\km;$(SolutionDir)inc;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
+    <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -105,6 +109,22 @@
       <AdditionalDependencies>ntdll.lib</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
+    <CustomBuildStep>
+      <Command>git rev-parse --short HEAD &gt;"$(IntermediateOutputPath)hash.txt"
+set /p CommitHash= &lt;"$(IntermediateOutputPath)hash.txt"
+echo #define GIT_COMMIT_HASH  "%CommitHash%" &gt;"$(SolutionDir)inc\_git.h"
+git rev-list --count HEAD &gt;"$(IntermediateOutputPath)count.txt"
+set /p CommitCount= &lt;"$(IntermediateOutputPath)count.txt"
+echo #define GIT_COMMIT_COUNT %CommitCount% &gt;&gt;"$(SolutionDir)inc\_git.h"
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Saving git hash to file</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -121,6 +141,22 @@
       <AdditionalDependencies>ntdll.lib</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
+    <CustomBuildStep>
+      <Command>git rev-parse --short HEAD &gt;"$(IntermediateOutputPath)hash.txt"
+set /p CommitHash= &lt;"$(IntermediateOutputPath)hash.txt"
+echo #define GIT_COMMIT_HASH  "%CommitHash%" &gt;"$(SolutionDir)inc\_git.h"
+git rev-list --count HEAD &gt;"$(IntermediateOutputPath)count.txt"
+set /p CommitCount= &lt;"$(IntermediateOutputPath)count.txt"
+echo #define GIT_COMMIT_COUNT %CommitCount% &gt;&gt;"$(SolutionDir)inc\_git.h"
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Saving git hash to file</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -140,6 +176,22 @@
       <AdditionalDependencies>ntdll.lib</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
+    <CustomBuildStep>
+      <Command>git rev-parse --short HEAD &gt;"$(IntermediateOutputPath)hash.txt"
+set /p CommitHash= &lt;"$(IntermediateOutputPath)hash.txt"
+echo #define GIT_COMMIT_HASH  "%CommitHash%" &gt;"$(SolutionDir)inc\_git.h"
+git rev-list --count HEAD &gt;"$(IntermediateOutputPath)count.txt"
+set /p CommitCount= &lt;"$(IntermediateOutputPath)count.txt"
+echo #define GIT_COMMIT_COUNT %CommitCount% &gt;&gt;"$(SolutionDir)inc\_git.h"
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Saving git hash to file</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -159,6 +211,22 @@
       <AdditionalDependencies>ntdll.lib</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
+    <CustomBuildStep>
+      <Command>git rev-parse --short HEAD &gt;"$(IntermediateOutputPath)hash.txt"
+set /p CommitHash= &lt;"$(IntermediateOutputPath)hash.txt"
+echo #define GIT_COMMIT_HASH  "%CommitHash%" &gt;"$(SolutionDir)inc\_git.h"
+git rev-list --count HEAD &gt;"$(IntermediateOutputPath)count.txt"
+set /p CommitCount= &lt;"$(IntermediateOutputPath)count.txt"
+echo #define GIT_COMMIT_COUNT %CommitCount% &gt;&gt;"$(SolutionDir)inc\_git.h"
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Saving git hash to file</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="nthello.c" />

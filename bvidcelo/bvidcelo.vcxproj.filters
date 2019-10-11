@@ -24,9 +24,4 @@
       <Filter>Resource files</Filter>
     </ResourceCompile>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="inbv.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-  </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 #include <platform.h>
 #include <ntddk.h>
-#include <dietndk/ntdll.h>
+#include <dietndk/nt.h>
 
 #define DELAY_MS(ms) ((ms) * -10000)
 
