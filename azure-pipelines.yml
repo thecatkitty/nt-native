@@ -14,7 +14,7 @@ steps:
   inputs:
     solution: '**\*.sln'
     vsVersion: '16.0'
-    platform: 'x86'
-    configuration: 'debug, release'
+    platform: $(platform)
+    configuration: $(configuration)
     clean: true
     createLogFile: true
