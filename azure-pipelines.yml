@@ -14,16 +14,9 @@ steps:
     clean: true
     createLogFile: true
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: false
-    archiveType: '7z'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).7z'
-    replaceExistingArchive: true
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'nt-native-debug'
+    PathtoPublish: '$(Build.SourcesDirectory)/$(configuration)'
+    ArtifactName: 'nt-native-$(platform)-$(configuration)'
     publishLocation: 'Container'
     
