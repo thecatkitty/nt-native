@@ -2,4 +2,5 @@
 .vscode/
 Debug/
 Release/
+/x64
 /inc/_git.h

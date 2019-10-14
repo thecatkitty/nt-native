@@ -88,17 +88,21 @@
     <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
-    <LibraryPath>$(SDK_LIB_PATH)..\..\km\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SDK_LIB_PATH)..\..\km\$(PlatformTarget);$(LibraryPath)</LibraryPath>
     <TargetExt>.sys</TargetExt>
     <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
+    <OutDir>$(SolutionDir)$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
-    <LibraryPath>$(SDK_LIB_PATH)..\..\km\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SDK_LIB_PATH)..\..\km\$(PlatformTarget);$(LibraryPath)</LibraryPath>
     <TargetExt>.sys</TargetExt>
     <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
+    <OutDir>$(SolutionDir)$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
@@ -106,6 +110,9 @@
     <GenerateManifest>false</GenerateManifest>
     <TargetExt>.sys</TargetExt>
     <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
+    <LibraryPath>$(SDK_LIB_PATH)..\..\km\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
@@ -113,6 +120,9 @@
     <GenerateManifest>false</GenerateManifest>
     <TargetExt>.sys</TargetExt>
     <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
+    <LibraryPath>$(SDK_LIB_PATH)..\..\km\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

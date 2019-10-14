@@ -4,6 +4,15 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 
+strategy:
+  matrix:
+    Debug32:
+      configuration: Debug
+      platform: x86
+    Debug64:
+      configuration: Debug
+      platform: x64
+
 steps:
 - task: VSBuild@1
   inputs:
@@ -16,7 +25,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/$(configuration)'
+    PathtoPublish: '$(Build.SourcesDirectory)/$(platform)/$(configuration)'
     ArtifactName: 'nt-native-$(platform)-$(configuration)'
     publishLocation: 'Container'
     
