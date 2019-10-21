@@ -1,16 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29326.143
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nthello", "nthello\nthello.vcxproj", "{BAEF69A8-2325-4A0C-83E2-BB8088087B7D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bvidcelo", "bvidcelo\bvidcelo.vcxproj", "{F7B0F06B-8ED6-4320-8373-2E3406F4C445}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ntkeybin", "ntkeybin\ntkeybin.vcxproj", "{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		common\common.vcxitems*{2eabfbf5-7776-4aa1-bd19-29d35ef89753}*SharedItemsImports = 9
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
@@ -38,6 +37,14 @@ Global
 		{F7B0F06B-8ED6-4320-8373-2E3406F4C445}.Release|x86.ActiveCfg = Release|Win32
 		{F7B0F06B-8ED6-4320-8373-2E3406F4C445}.Release|x86.Build.0 = Release|Win32
 		{F7B0F06B-8ED6-4320-8373-2E3406F4C445}.Release|x86.Deploy.0 = Release|Win32
+		{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}.Debug|x64.ActiveCfg = Debug|x64
+		{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}.Debug|x64.Build.0 = Debug|x64
+		{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}.Debug|x86.ActiveCfg = Debug|Win32
+		{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}.Debug|x86.Build.0 = Debug|Win32
+		{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}.Release|x64.ActiveCfg = Release|x64
+		{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}.Release|x64.Build.0 = Release|x64
+		{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}.Release|x86.ActiveCfg = Release|Win32
+		{95BD36A4-0B6A-46BF-8D2E-8B9464123C01}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
