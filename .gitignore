@@ -1,6 +1,8 @@
 .vs/
 .vscode/
+*.user
 Debug/
 Release/
+/x86
 /x64
 /inc/_git.h
