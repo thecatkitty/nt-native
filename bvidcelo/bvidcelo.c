@@ -1,5 +1,5 @@
 #include <ntddk.h>
-#include <dietndk/inbv.h>
+#include <dietndk/vid.h>
 
 
 typedef struct _BVID_DEVICE_EXTENSION {
@@ -15,11 +15,13 @@ NTSTATUS BVidCreate(
     UNREFERENCED_PARAMETER(DeviceObject);
     UNREFERENCED_PARAMETER(Irp);
 
-    if (InbvIsBootDriverInstalled()) {
-        InbvAcquireDisplayOwnership();
-        InbvResetDisplay();
-        InbvSolidColorFill(30, 30, 200, 200, 8);
-    }
+    VidInitialize(TRUE);
+    VidResetDisplay(FALSE);
+
+    VidSolidColorFill(0, 0, 639, 479, VGA_COLOR_BRIGHT_TURQUOISE);
+    VidSetTextColor(VGA_COLOR_GREEN);
+
+    VidDisplayString("Welcome from BVidCelo\n");
 
     DbgPrint("BVidCelo got created\n");
     return STATUS_SUCCESS;
@@ -33,6 +35,9 @@ NTSTATUS BVidClose(
 {
     UNREFERENCED_PARAMETER(DeviceObject);
     UNREFERENCED_PARAMETER(Irp);
+
+    VidCleanUp();
+
     DbgPrint("BVidCelo got closed\n");
     return STATUS_SUCCESS;
 }
@@ -51,7 +56,6 @@ NTSTATUS NTAPI DriverEntry(
     IN PDRIVER_OBJECT DriverObject,
     IN PUNICODE_STRING RegistryPath)
 {
-    UNREFERENCED_PARAMETER(DriverObject);
     UNREFERENCED_PARAMETER(RegistryPath);
     DbgPrint("Hello, World! BVidCelo sends greetings...\n");
 
