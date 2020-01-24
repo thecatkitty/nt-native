@@ -235,10 +235,15 @@ echo #define GIT_COMMIT_COUNT %CommitCount% &gt;&gt;"$(SolutionDir)inc\_git.h"
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ntgfx.c" />
+    <ClCompile Include="ntgfx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ntgfx.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\canter\canter.vcxproj">
+      <Project>{5f6bff3b-0a34-4aaf-9030-2720008ff971}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
