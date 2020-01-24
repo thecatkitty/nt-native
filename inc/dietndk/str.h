@@ -3,6 +3,10 @@
 
 #include <ntdef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
+
 inline VOID ZeroMemory(
     IN PVOID dest,
     IN SIZE_T count)
@@ -14,5 +18,9 @@ inline VOID ZeroMemory(
         pc++;
     }
 }
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
 
 #endif // _DNDK_STR_H_

@@ -4,6 +4,10 @@
 
 #include <ntdef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
+
 
 #define VGA_COLOR_BLACK                      0
 #define VGA_COLOR_RED                        1
@@ -83,5 +87,9 @@ NTKERNELAPI VOID NTAPI VidBitBlt(
     IN PUCHAR Buffer,
     IN ULONG Left,
     IN ULONG Top);
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
 
 #endif // _DNDK_VID_H_
