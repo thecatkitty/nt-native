@@ -1,26 +1,23 @@
 #pragma once
 
 #include <platform.h>
-#include <ntddk.h>
 #include <dietndk/nt.h>
 #include <cstdint>
 
 namespace canter
 {
     struct process {
-        inline static NTSTATUS delay(
-            IN int64_t duration)
-        {
-            LARGE_INTEGER delay;
-            delay.QuadPart = duration;
-            return NtDelayExecution(FALSE, &delay);
-        }
+        static NTSTATUS delay(
+            IN int64_t duration);
 
-        inline static NTSTATUS terminate(
-            IN NTSTATUS status)
-        {
-            return NtTerminateProcess(reinterpret_cast<HANDLE>(-1), status);
-        }
+        static NTSTATUS terminate(
+            IN NTSTATUS status);
+
+        static PUNICODE_STRING get_path(
+            IN PVOID peb);
+
+        static PUNICODE_STRING get_command_line(
+            IN PVOID peb);
     };
 }
 

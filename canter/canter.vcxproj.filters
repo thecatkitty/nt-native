@@ -18,5 +18,8 @@
     <ClCompile Include="device.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
+    <ClCompile Include="process.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

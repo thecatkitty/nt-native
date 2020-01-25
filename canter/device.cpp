@@ -1,5 +1,7 @@
 #include <canter/device.hpp>
 
+#include <ntifs.h>
+
 canter::device::device(
     IN PCWSTR name,
     IN object_attribute attributes)
@@ -17,7 +19,7 @@ canter::device::device(
 NTSTATUS canter::device::open(
     IN access access_mask)
 {
-    return ZwOpenFile(
+    return NtOpenFile(
         &_hfile,
         static_cast<ULONG>(access_mask),
         &_oattrs,
@@ -28,5 +30,44 @@ NTSTATUS canter::device::open(
 
 NTSTATUS canter::device::close()
 {
-    return ZwClose(_hfile);
+    return NtClose(_hfile);
+}
+
+NTSTATUS canter::device::write(
+    IN PVOID buffer,
+    IN ULONG count)
+{
+    LARGE_INTEGER offset;
+    offset.QuadPart = 0;
+
+    return NtWriteFile(
+        _hfile,
+        NULL,
+        NULL,
+        NULL,
+        &_iosb,
+        buffer,
+        count,
+        &offset,
+        NULL);
+}
+
+NTSTATUS canter::device::control(
+    IN ULONG code,
+    IN PVOID in_buffer,
+    IN ULONG in_count,
+    OUT PVOID out_buffer,
+    OUT ULONG out_count)
+{
+    return NtDeviceIoControlFile(
+        _hfile,
+        NULL,
+        NULL,
+        NULL,
+        &_iosb,
+        code,
+        in_buffer,
+        in_count,
+        out_buffer,
+        out_count);
 }

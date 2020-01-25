@@ -1,8 +1,7 @@
 #pragma once
 
 #include <platform.h>
-#include <ntddk.h>
-#include <dietndk/nt.h>
+#include <ntifs.h>
 
 
 #define CANTER_FLAG_FIELD(name, value_type)                                   \
@@ -69,5 +68,16 @@ namespace canter
             IN access access_mask);
 
         NTSTATUS close();
+
+        NTSTATUS write(
+            IN PVOID buffer,
+            IN ULONG count);
+
+        NTSTATUS control(
+            IN ULONG code,
+            IN PVOID in_buffer,
+            IN ULONG in_count,
+            OUT PVOID out_buffer = NULL,
+            IN ULONG out_count = 0);
     };
 }
