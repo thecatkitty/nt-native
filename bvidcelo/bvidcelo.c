@@ -18,10 +18,8 @@ NTSTATUS BVidCreate(
     VidInitialize(TRUE);
     VidResetDisplay(FALSE);
 
-    VidSolidColorFill(0, 0, 639, 479, VGA_COLOR_BRIGHT_TURQUOISE);
-    VidSetTextColor(VGA_COLOR_GREEN);
-
-    VidDisplayString("Welcome from BVidCelo\n");
+    VidSolidColorFill(0, 0, 639, 479, VGA_COLOR_BLUE);
+    VidSetTextColor(VGA_COLOR_BRIGHT_PURPLE);
 
     DbgPrint("BVidCelo got created\n");
     return STATUS_SUCCESS;
@@ -40,6 +38,29 @@ NTSTATUS BVidClose(
 
     DbgPrint("BVidCelo got closed\n");
     return STATUS_SUCCESS;
+}
+
+
+DRIVER_DISPATCH BVidWrite;
+NTSTATUS BVidWrite(
+    IN PDEVICE_OBJECT DeviceObject,
+    IN PIRP Irp)
+{
+    NTSTATUS Status = STATUS_SUCCESS;
+    PVOID UserData;
+    ULONG DataSize;
+
+    PIO_STACK_LOCATION IrpStack = IoGetCurrentIrpStackLocation(Irp);
+
+    DataSize = IrpStack->Parameters.Write.Length;
+    UserData = Irp->AssociatedIrp.SystemBuffer;
+
+    VidDisplayString((PUCHAR)UserData);
+
+    Irp->IoStatus.Status = Status;
+    Irp->IoStatus.Information = DataSize;
+    IoCompleteRequest(Irp, IO_NO_INCREMENT);
+    return Status;
 }
 
 
@@ -64,17 +85,24 @@ NTSTATUS NTAPI DriverEntry(
     UNICODE_STRING DeviceName = RTL_CONSTANT_STRING(L"\\Device\\BVidCelo");
     NTSTATUS Status;
 
-    Status = IoCreateDevice(DriverObject,
+    Status = IoCreateDevice(
+        DriverObject,
         sizeof(DEVICE_EXTENSION),
         &DeviceName,
         FILE_DEVICE_VIDEO,
         0,
         FALSE,
         &DeviceObject);
-    if (!NT_SUCCESS(Status)) return Status;
+    if (!NT_SUCCESS(Status))
+    {
+        return Status;
+    }
+
+    DeviceObject->Flags |= DO_BUFFERED_IO;
 
     DriverObject->MajorFunction[IRP_MJ_CREATE] = BVidCreate;
     DriverObject->MajorFunction[IRP_MJ_CLOSE] = BVidClose;
+    DriverObject->MajorFunction[IRP_MJ_WRITE] = BVidWrite;
     DriverObject->DriverUnload = BVidUnload;
 
     return STATUS_SUCCESS;
