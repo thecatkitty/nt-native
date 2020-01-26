@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="device.cpp" />
     <ClCompile Include="process.cpp" />
+    <ClCompile Include="string.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

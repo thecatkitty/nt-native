@@ -21,5 +21,8 @@
     <ClCompile Include="process.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
+    <ClCompile Include="string.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
