@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ntkeybin.c">
+    <ClCompile Include="gs.c">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="gs.c">
+    <ClCompile Include="ntkeybin.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>

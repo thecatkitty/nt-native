@@ -250,10 +250,15 @@ echo #define GIT_COMMIT_COUNT %CommitCount% &gt;&gt;"$(SolutionDir)inc\_git.h"
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="gs.c" />
-    <ClCompile Include="ntkeybin.c" />
+    <ClCompile Include="ntkeybin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ntkeybin.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\canter\canter.vcxproj">
+      <Project>{5f6bff3b-0a34-4aaf-9030-2720008ff971}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
