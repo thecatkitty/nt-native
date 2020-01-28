@@ -74,6 +74,9 @@ NTSTATUS canter::device::write(
     IN PVOID buffer,
     IN ULONG count)
 {
+    LARGE_INTEGER offset;
+    offset.QuadPart = 0;
+
     return NtWriteFile(
         _hfile,
         NULL,
@@ -82,7 +85,7 @@ NTSTATUS canter::device::write(
         &_iosb,
         buffer,
         count,
-        NULL,
+        &offset,
         NULL);
 }
 
