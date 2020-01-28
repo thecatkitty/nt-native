@@ -40,7 +40,7 @@ VOID NTAPI NtProcessStartup(
 
     BOOLEAN still{ TRUE };
     while (still) {
-        ZeroMemory(&kbdi, size);
+        RtlZeroMemory(&kbdi, size);
         status = keyb.read(&kbdi, size);
 
         if (!NT_SUCCESS(status)) {

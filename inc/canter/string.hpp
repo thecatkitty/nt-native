@@ -2,7 +2,6 @@
 
 #include <platform.h>
 #include <ntddk.h>
-#include <dietndk/str.h>
 
 namespace canter
 {

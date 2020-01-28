@@ -8,7 +8,7 @@
 
 canter::string::string()
 {
-    ZeroMemory(_buff, sizeof(_buff));
+    RtlZeroMemory(_buff, sizeof(_buff));
     RtlInitEmptyUnicodeString(&_nts, _buff, sizeof(_buff));
 }
 
