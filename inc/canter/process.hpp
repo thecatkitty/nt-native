@@ -1,7 +1,8 @@
 #pragma once
 
 #include <platform.h>
-#include <dietndk/nt.h>
+#include <phnt_windows.h>
+#include <phnt.h>
 #include <cstdint>
 
 namespace canter

@@ -9,3 +9,5 @@
 #define _AMD64_
 #endif
 #endif // ARCH_x64
+
+#define PHNT_NO_INLINE_INIT_STRING

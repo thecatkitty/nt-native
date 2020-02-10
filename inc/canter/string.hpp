@@ -1,7 +1,8 @@
 #pragma once
 
 #include <platform.h>
-#include <ntddk.h>
+#include <phnt_windows.h>
+#include <phnt.h>
 
 namespace canter
 {
@@ -14,18 +15,18 @@ namespace canter
         string();
 
         string(
-            IN PCWSTR str);
+            IN PWSTR str);
 
         string(
             IN UNICODE_STRING &nts);
 
         string& operator=(
-            IN PCWSTR str);
+            IN PWSTR str);
 
         string& operator=(
             IN UNICODE_STRING &nts);
 
-        operator PCWSTR() const;
+        operator PWSTR();
 
         operator PUNICODE_STRING();
 

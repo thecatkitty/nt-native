@@ -1,7 +1,8 @@
 #pragma once
 
 #include <platform.h>
-#include <ntifs.h>
+#include <phnt_windows.h>
+#include <phnt.h>
 
 
 #define CANTER_FLAG_FIELD(name, value_type)                                   \

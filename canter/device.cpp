@@ -1,13 +1,12 @@
 #include <canter/device.hpp>
 
-#include <ntifs.h>
 
 canter::device::device(
     IN PCWSTR name,
     IN object_attribute attributes)
     : _hfile{ 0 }
 {
-    RtlInitUnicodeString(&_name, name);
+    RtlInitUnicodeString(&_name, const_cast<PWSTR>(name));
     InitializeObjectAttributes(
         &_oattrs,
         &_name,

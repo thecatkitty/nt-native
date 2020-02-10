@@ -1,7 +1,8 @@
 #define NTSTRSAFE_LIB
 
 #include <canter/string.hpp>
-#include <dietndk/nt.h>
+#include <phnt_windows.h>
+#include <phnt.h>
 #include <ntstrsafe.h>
 #include <cstdarg>
 
@@ -13,7 +14,7 @@ canter::string::string()
 }
 
 canter::string::string(
-    IN PCWSTR str)
+    IN PWSTR str)
 {
     RtlInitUnicodeString(&_nts, str);
 }
@@ -25,7 +26,7 @@ canter::string::string(
 }
 
 canter::string& canter::string::operator=(
-    IN PCWSTR str)
+    IN PWSTR str)
 {
     RtlInitUnicodeString(&_nts, str);
     return *this;
@@ -38,7 +39,7 @@ canter::string& canter::string::operator=(
     return *this;
 }
 
-canter::string::operator PCWSTR() const
+canter::string::operator PWSTR()
 {
     return _nts.Buffer;
 }
@@ -75,6 +76,6 @@ NTSTATUS canter::display(
     IN PCWSTR str)
 {
     UNICODE_STRING nts;
-    RtlInitUnicodeString(&nts, str);
+    RtlInitUnicodeString(&nts, const_cast<PWSTR>(str));
     return NtDisplayString(&nts);
 }

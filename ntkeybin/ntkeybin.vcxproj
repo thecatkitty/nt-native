@@ -69,7 +69,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)phnt;$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <LibraryPath>$(WindowsSDK_LibraryPath)\..\km\x86;$(LibraryPath)</LibraryPath>
@@ -78,7 +78,7 @@
     <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)phnt;$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <LibraryPath>$(WindowsSDK_LibraryPath)\..\km\x86;$(LibraryPath)</LibraryPath>
@@ -87,7 +87,7 @@
     <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)phnt;$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>
@@ -96,7 +96,7 @@
     <LibraryPath>$(WindowsSDK_LibraryPath)\..\km\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)phnt;$(SolutionDir)inc;$(UM_IncludePath)\..\km;$(IncludePath)</IncludePath>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <CustomBuildBeforeTargets>BuildGenerateSources</CustomBuildBeforeTargets>

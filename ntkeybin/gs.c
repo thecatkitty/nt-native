@@ -1,6 +1,6 @@
 #include <platform.h>
-#include <ntddk.h>
-#include <dietndk/nt.h>
+#include <phnt_windows.h>
+#include <phnt.h>
 
 uintptr_t __security_cookie = 0xBADBEEF;
 #ifdef ARCH_x86
