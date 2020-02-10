@@ -1,5 +1,5 @@
 #include <ntddk.h>
-#include <dietndk/vid.h>
+#include <bootvid.h>
 
 
 typedef struct _BVID_DEVICE_EXTENSION {
